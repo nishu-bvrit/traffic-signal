@@ -1,56 +1,73 @@
-# 🚦 Arduino Traffic Light System
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Arduino-Uno-00979D?style=for-the-badge&logo=arduino&logoColor=white">
-  <img src="https://img.shields.io/badge/Language-C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white">
-  <img src="https://img.shields.io/badge/Platform-Arduino_IDE-1E1E1E?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Project-Beginner-success?style=for-the-badge">
-</p>
+# 🚦 Smart Traffic Light System using Arduino Uno
 
-<p align="center">
-  <b>A simple Arduino Uno project that simulates a real-world traffic signal using three LEDs.</b>
-</p>
+<img src="https://img.shields.io/badge/Arduino-Uno-00979D?style=for-the-badge&logo=arduino&logoColor=white"/>
+<img src="https://img.shields.io/badge/Language-C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white"/>
+<img src="https://img.shields.io/badge/Platform-Arduino_IDE-00979D?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Difficulty-Beginner-success?style=for-the-badge"/>
+<img src="https://img.shields.io/github/license/YOUR_USERNAME/Traffic-Light-Arduino?style=for-the-badge"/>
+
+### 🚥 Simulating a Real-World Traffic Signal using Arduino Uno and LEDs
+
+*A beginner-friendly embedded systems project demonstrating digital outputs, timing control, and Arduino programming.*
+
+</div>
 
 ---
 
-## 📖 About the Project
+# 📖 Overview
 
-This project demonstrates the basic working of a **traffic light system** using an **Arduino Uno** and three LEDs.
+This project implements a **Traffic Light System** using an **Arduino Uno** and three LEDs.
 
-The LEDs operate in the following sequence:
+The LEDs switch in the same sequence as a real traffic signal:
 
-🔴 Red → 🟢 Green → 🟡 Yellow → Repeat
+```text
+🔴 RED (5 sec)
+      ↓
+🟢 GREEN (5 sec)
+      ↓
+🟡 YELLOW (3 sec)
+      ↓
+Repeat Forever...
+```
 
-It is an excellent beginner project to learn:
+This project is perfect for beginners who are learning:
 
 - Arduino Programming
-- Digital Output
-- Timing using `delay()`
-- Circuit Connections
-- LED Control
+- Embedded Systems
+- LED Interfacing
+- Digital Electronics
+- Basic Automation
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-- 🚦 Realistic traffic light sequence
-- ⚡ Beginner-friendly Arduino code
-- 🔌 Easy hardware setup
-- 📚 Great for students and Arduino beginners
-- 🛠️ Uses only basic electronic components
+✅ Simple and Clean Code
+
+✅ Realistic Traffic Light Sequence
+
+✅ Beginner Friendly
+
+✅ Easy Hardware Connections
+
+✅ Low Cost Components
+
+✅ Perfect for ECE Students
 
 ---
 
-# 🛠️ Components Required
+# 🛠 Components Used
 
 | Component | Quantity |
-|-----------|----------|
+|------------|---------:|
 | Arduino Uno | 1 |
+| Breadboard | 1 |
 | Red LED | 1 |
 | Yellow LED | 1 |
 | Green LED | 1 |
-| 220Ω Resistors | 3 |
-| Breadboard | 1 |
+| 220Ω Resistor | 3 |
 | Jumper Wires | As Required |
 | USB Cable | 1 |
 
@@ -58,30 +75,67 @@ It is an excellent beginner project to learn:
 
 # 🔌 Circuit Connections
 
-| Arduino Pin | Component |
-|-------------|-----------|
-| D2 | 🔴 Red LED |
-| D3 | 🟡 Yellow LED |
-| D4 | 🟢 Green LED |
-| GND | LED Negative Terminal (through resistor) |
+| LED | Arduino Pin |
+|-----|------------:|
+| 🔴 Red | D10 |
+| 🟡 Yellow | D9 |
+| 🟢 Green | D11 |
+
+> **Note:** Connect each LED through a **220Ω resistor** to GND.
 
 ---
 
-# 🚦 Working
+# ⚙ Working Principle
+
+The Arduino continuously executes the following sequence:
 
 ```text
-START
-  │
-  ▼
-🔴 Red ON (5 sec)
-  │
-  ▼
-🟢 Green ON (5 sec)
-  │
-  ▼
-🟡 Yellow ON (2 sec)
-  │
-  ▼
+Start
+
+↓
+
+🔴 RED ON
+5 Seconds
+
+↓
+
+🟢 GREEN ON
+5 Seconds
+
+↓
+
+🟡 YELLOW ON
+3 Seconds
+
+↓
+
+Repeat
+```
+
+---
+
+# ⏱ Timing Table
+
+| LED | Duration |
+|------|---------:|
+| 🔴 Red | 5 Seconds |
+| 🟢 Green | 5 Seconds |
+| 🟡 Yellow | 3 Seconds |
+
+---
+
+# 💻 Arduino Logic
+
+```cpp
+Turn ON Red
+Wait 5 Seconds
+
+Turn ON Green
+Wait 5 Seconds
+
+Turn ON Yellow
+Wait 3 Seconds
+
 Repeat Forever
 ```
 
@@ -90,101 +144,127 @@ Repeat Forever
 # 📂 Project Structure
 
 ```
-Traffic-Light-Arduino/
+Traffic-Light-System/
 │
 ├── Traffic_Light.ino
 ├── README.md
-└── circuit_diagram.png
+├── LICENSE
+│
+├── images/
+│   ├── circuit.png
+│   ├── breadboard.png
+│   └── output.gif
+│
+└── assets/
+    └── banner.png
 ```
 
 ---
 
-# 💻 Arduino Code Logic
+# 🚀 Getting Started
 
-```cpp
-Red ON      → Wait 5 seconds
-Green ON    → Wait 5 seconds
-Yellow ON   → Wait 2 seconds
+### 1️⃣ Clone the Repository
 
-Repeat...
+```bash
+git clone https://github.com/YOUR_USERNAME/Traffic-Light-System.git
 ```
 
 ---
 
-# ▶️ How to Run
+### 2️⃣ Open Arduino IDE
 
-### 1. Connect the LEDs
-
-Follow the circuit diagram.
-
-### 2. Open Arduino IDE
-
-Open the `.ino` file.
-
-### 3. Select Board
+Open
 
 ```
-Tools → Board → Arduino Uno
+Traffic_Light.ino
 ```
 
-### 4. Select COM Port
+---
+
+### 3️⃣ Select Board
 
 ```
-Tools → Port → COMx
+Tools
+   ↓
+Board
+   ↓
+Arduino Uno
 ```
 
-### 5. Upload
+---
+
+### 4️⃣ Select COM Port
+
+```
+Tools
+   ↓
+Port
+   ↓
+COMx
+```
+
+---
+
+### 5️⃣ Upload
 
 Click the **Upload** button.
 
+Done! 🎉
+
 ---
 
-# 📸 Output
+# 📷 Project Preview
+
+## Circuit Diagram
 
 ```
-🔴 ON
-      ↓
-🟢 ON
-      ↓
-🟡 ON
-      ↓
-Repeat...
+📁 images/circuit.png
 ```
 
 ---
 
-# 🚀 Future Improvements
+## Breadboard Setup
 
-- 🚶 Pedestrian Crossing Button
-- 🚗 IR Sensor-based Smart Traffic System
-- ⏱️ Countdown Timer Display
-- 📡 IoT Traffic Monitoring
-- 🚨 Emergency Vehicle Priority
+```
+📁 images/breadboard.png
+```
 
 ---
 
-# 🧠 What You'll Learn
+## Output
 
-- Arduino Basics
+```
+📁 images/output.gif
+```
+
+---
+
+# 🧠 Concepts Used
+
+- Arduino Programming
 - pinMode()
 - digitalWrite()
 - delay()
+- Digital Output
+- Embedded Systems
 - LED Interfacing
-- Breadboard Connections
+- Breadboard Wiring
 
 ---
 
-# 📷 Circuit Diagram
+# 📈 Future Improvements
 
-> Add your circuit image here.
+- 🚶 Pedestrian Crossing Button
 
-```
-images/circuit.png
-```
+- 🚗 IR Vehicle Detection
 
-or
+- 🚦 Smart Traffic Control
 
-Drag and drop the image into the README.
+- 📟 LCD Countdown Timer
+
+- 🌐 IoT Traffic Monitoring
+
+- 🚑 Emergency Vehicle Priority
 
 ---
 
@@ -193,29 +273,57 @@ Drag and drop the image into the README.
 Contributions are welcome!
 
 1. Fork this repository
-2. Create a new branch
+
+2. Create your feature branch
+
+```bash
+git checkout -b feature-name
+```
+
 3. Commit your changes
-4. Push to your branch
-5. Open a Pull Request
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push
+
+```bash
+git push origin feature-name
+```
+
+5. Open a Pull Request 🚀
 
 ---
 
-# ⭐ If you like this project
+# ⭐ Show Your Support
 
-Give this repository a ⭐ on GitHub!
+If you found this project helpful,
 
-It helps others discover the project.
+## ⭐ Star this Repository ⭐
+
+It motivates me to build more Arduino and Embedded Systems projects.
+
+---
+
+# 👨‍💻 Author
+
+**Nishant**
+
+ECE Student • Arduino Enthusiast • Embedded Systems Learner
 
 ---
 
 # 📜 License
 
-This project is licensed under the **MIT License**.
-
-Feel free to use, modify, and share.
+This project is licensed under the MIT License.
 
 ---
 
-<p align="center">
+<div align="center">
+
+## 🚥 Happy Coding! 🚥
+
 Made with ❤️ using Arduino Uno
-</p>
+
+</div>
